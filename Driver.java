@@ -40,7 +40,7 @@ public class Driver
 
         for (int x = 0; x < players; x++)
         {
-            
+            player[x].add(x); //doesnt wrok :(
         }
 
 		
