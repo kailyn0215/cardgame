@@ -9,23 +9,28 @@ public class Driver
     public static void main(String args[])
 	{
         ArrayList<Cards> deck = new ArrayList<Cards>();
-        ArrayList<Cards> discard = new ArrayList<Cards>();
+        //ArrayList<Cards> discard = new ArrayList<Cards>();
 
-        ArrayList<Cards> p1 = new ArrayList<Cards>();
+        //ArrayList<ArrayList<Cards>> players = new ArrayList<ArrayList<Cards>>();
+
+        /*ArrayList<Cards> p1 = new ArrayList<Cards>();
         ArrayList<Cards> p2 = new ArrayList<Cards>();
         ArrayList<Cards> p3 = new ArrayList<Cards>();
         ArrayList<Cards> p4 = new ArrayList<Cards>();
 
+        ArrayList<Cards> dealer = new ArrayList<Cards>();*/
+
 		String[] suits = {"Hearts", "Diamonds", "Clubs", "Spades"};
 		String[] values = {"2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King", "Ace"};
-        String[] player = {"p1", "p2", "p3", "p4"};
 
-        int players;
+        int numPlayers;
         boolean game = false;
         boolean again = false;
 
+        System.out.print("Please input the number of players: ");
         Scanner input = new Scanner(System.in);
-        players = input.nextInt();
+        numPlayers = input.nextInt();
+        System.out.print("\n\n");
 		
 		for (int i = 0; i < 4; i++) // creates a deck of cards
 		{
@@ -37,12 +42,11 @@ public class Driver
 		}	
 
         Collections.shuffle(deck);
+        
+        Blackjack g1 = new Blackjack(deck);
 
-        for (int x = 0; x < players; x++)
-        {
-            player[x].add(x); //doesnt wrok :(
-        }
 
+        g1.deal(numPlayers, 2);
 		
 		/* for (int x = 0; x < 10; x++) // gives 10 cards
 		{
@@ -52,7 +56,6 @@ public class Driver
 		{
 			p2.add(deck.get(y));
         } */ //blackjack
-        System.out.print(p1.toString()); // prints out p1's hand
 	}
 
 
