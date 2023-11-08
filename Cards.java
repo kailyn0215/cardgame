@@ -9,10 +9,20 @@ public class Cards
 		this.value = values;
 	}
 	
+    public String getSuit()
+    {
+        return suit;
+    }
+
+    public String getValue()
+    {
+        return value;
+    }
+
 	public String toString()
 	{
 		return (value + " of " + suit);
 	}
 
-	
+    
 }
